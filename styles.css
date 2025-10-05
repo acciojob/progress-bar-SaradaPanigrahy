@@ -1,1 +1,92 @@
 /*  your css code here. If applicable */
+body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f6fa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .progress-container {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      width: 60%;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    /* Background line */
+    .progress-container::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 4px;
+      width: 100%;
+      background-color: #dcdcdc;
+      z-index: 1;
+    }
+
+    /* Filled progress line */
+    .progress {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 4px;
+      background-color: #3498db;
+      width: 0%;
+      z-index: 2;
+      transition: width 0.3s ease;
+    }
+
+    .circle {
+      background-color: #fff;
+      color: #999;
+      border: 3px solid #dcdcdc;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      position: relative;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .circle.active {
+      border-color: #3498db;
+      color: #3498db;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover:enabled {
+      background-color: #217dbb;
+    }
+
+    button:disabled {
+      background-color: #b3d7f5;
+      cursor: not-allowed;
+    }
